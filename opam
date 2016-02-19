@@ -1,0 +1,27 @@
+opam-version: "1.2"
+name: "mirage-block-fs"
+version: "0.0.1"
+maintainer: "ruhatch <ruhatch@me.com>"
+authors: "ruhatch <ruhatch@me.com>"
+homepage: "https://github.com/ruhatch/mirage-block-fs"
+bug-reports: "https://github.com/ruhatch/mirage-block-fs/issues"
+license: "MIT"
+dev-repo: "https://github.com/ruhatch/mirage-block-fs.git"
+build: [
+ ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
+ [make "build"]
+]
+install: [make "install"]
+remove: [
+  ["ocamlfind" "remove" "mirage-block-fs"]
+]
+depends: [
+  "ocamlfind" {build}
+  "bin_prot"
+  "bisect_ppx" {>= "1.0.0"}
+  "core_kernel" {>= "113.00.00"}
+  "cstruct" {>= "1.8.0"}
+  "lwt"
+  "mirage" {>= "2.6.1"}
+  "ppx_bin_prot"
+]

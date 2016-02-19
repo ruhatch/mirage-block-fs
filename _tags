@@ -1,0 +1,94 @@
+# OASIS_START
+# DO NOT EDIT (digest: 71e86966eff4c80035c860fe88e7cf45)
+# Ignore VCS directories, you can use the same kind of rule outside
+# OASIS_START/STOP if you want to exclude directories that contains
+# useless stuff for the build process
+true: annot, bin_annot
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library mirage_block_fs
+"lib/mirage_block_fs.cmxs": use_mirage_block_fs
+<lib/*.ml{,i,y}>: pkg_bisect_ppx
+<lib/*.ml{,i,y}>: pkg_core_kernel
+<lib/*.ml{,i,y}>: pkg_cstruct
+<lib/*.ml{,i,y}>: pkg_lwt
+<lib/*.ml{,i,y}>: pkg_lwt.ppx
+<lib/*.ml{,i,y}>: pkg_mirage
+<lib/*.ml{,i,y}>: pkg_mirage-btrees
+# Executable fs_tests
+<tests/fsTests.{native,byte}>: pkg_alcotest
+<tests/fsTests.{native,byte}>: pkg_bisect_ppx
+<tests/fsTests.{native,byte}>: pkg_core_kernel
+<tests/fsTests.{native,byte}>: pkg_cstruct
+<tests/fsTests.{native,byte}>: pkg_lwt
+<tests/fsTests.{native,byte}>: pkg_lwt.ppx
+<tests/fsTests.{native,byte}>: pkg_mirage
+<tests/fsTests.{native,byte}>: pkg_mirage-block-unix
+<tests/fsTests.{native,byte}>: pkg_mirage-btrees
+<tests/fsTests.{native,byte}>: pkg_tests
+<tests/fsTests.{native,byte}>: use_mirage_block_fs
+# Executable inode_index_tests
+<tests/inodeIndexTests.{native,byte}>: pkg_alcotest
+<tests/inodeIndexTests.{native,byte}>: pkg_bisect_ppx
+<tests/inodeIndexTests.{native,byte}>: pkg_core_kernel
+<tests/inodeIndexTests.{native,byte}>: pkg_cstruct
+<tests/inodeIndexTests.{native,byte}>: pkg_lwt
+<tests/inodeIndexTests.{native,byte}>: pkg_lwt.ppx
+<tests/inodeIndexTests.{native,byte}>: pkg_mirage
+<tests/inodeIndexTests.{native,byte}>: pkg_mirage-block-unix
+<tests/inodeIndexTests.{native,byte}>: pkg_mirage-btrees
+<tests/inodeIndexTests.{native,byte}>: pkg_tests
+<tests/inodeIndexTests.{native,byte}>: use_mirage_block_fs
+<tests/*.ml{,i,y}>: pkg_mirage-block-unix
+# Executable inode_tests
+<tests/inodeTests.{native,byte}>: pkg_alcotest
+<tests/inodeTests.{native,byte}>: pkg_bisect_ppx
+<tests/inodeTests.{native,byte}>: pkg_core_kernel
+<tests/inodeTests.{native,byte}>: pkg_cstruct
+<tests/inodeTests.{native,byte}>: pkg_lwt
+<tests/inodeTests.{native,byte}>: pkg_lwt.ppx
+<tests/inodeTests.{native,byte}>: pkg_mirage
+<tests/inodeTests.{native,byte}>: pkg_mirage-btrees
+<tests/inodeTests.{native,byte}>: pkg_tests
+<tests/inodeTests.{native,byte}>: use_mirage_block_fs
+# Executable bitarray_tests
+<tests/bitarrayTests.{native,byte}>: pkg_alcotest
+<tests/bitarrayTests.{native,byte}>: pkg_bisect_ppx
+<tests/bitarrayTests.{native,byte}>: pkg_core_kernel
+<tests/bitarrayTests.{native,byte}>: pkg_cstruct
+<tests/bitarrayTests.{native,byte}>: pkg_lwt
+<tests/bitarrayTests.{native,byte}>: pkg_lwt.ppx
+<tests/bitarrayTests.{native,byte}>: pkg_mirage
+<tests/bitarrayTests.{native,byte}>: pkg_mirage-btrees
+<tests/bitarrayTests.{native,byte}>: pkg_tests
+<tests/bitarrayTests.{native,byte}>: use_mirage_block_fs
+# Executable free_map_tests
+<tests/free_map_tests.{native,byte}>: pkg_alcotest
+<tests/free_map_tests.{native,byte}>: pkg_bisect_ppx
+<tests/free_map_tests.{native,byte}>: pkg_core_kernel
+<tests/free_map_tests.{native,byte}>: pkg_cstruct
+<tests/free_map_tests.{native,byte}>: pkg_lwt
+<tests/free_map_tests.{native,byte}>: pkg_lwt.ppx
+<tests/free_map_tests.{native,byte}>: pkg_mirage
+<tests/free_map_tests.{native,byte}>: pkg_mirage-btrees
+<tests/free_map_tests.{native,byte}>: pkg_tests
+<tests/free_map_tests.{native,byte}>: use_mirage_block_fs
+<tests/*.ml{,i,y}>: pkg_alcotest
+<tests/*.ml{,i,y}>: pkg_bisect_ppx
+<tests/*.ml{,i,y}>: pkg_core_kernel
+<tests/*.ml{,i,y}>: pkg_cstruct
+<tests/*.ml{,i,y}>: pkg_lwt
+<tests/*.ml{,i,y}>: pkg_lwt.ppx
+<tests/*.ml{,i,y}>: pkg_mirage
+<tests/*.ml{,i,y}>: pkg_mirage-btrees
+<tests/*.ml{,i,y}>: pkg_tests
+<tests/*.ml{,i,y}>: use_mirage_block_fs
+# OASIS_STOP

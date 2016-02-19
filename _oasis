@@ -1,0 +1,118 @@
+Name: mirage-block-fs
+Version: 0.0.1
+Synopsis: An inode-based file system built on top of MirageOS's BLOCK interface
+Authors: Rupert Horlick <ruhatch@me.com>
+License: LGPL with OCaml linking exception
+
+Description: An inode-based file system built on top of MirageOS's BLOCK interface
+Homepage: https://github.com/ruhatch/mirage-block-fs
+
+OASISFormat: 0.4
+BuildTools: ocamlbuild
+Plugins: META (0.4), DevFiles (0.4)
+
+Library mirage_block_fs
+  Path:             lib
+  Findlibname:      mirage-block-fs
+  Modules:          Fs,
+                    InodeIndex,
+                    Inode,
+                    FreeMap,
+                    Bitarray
+  BuildDepends:     bisect_ppx,
+                    mirage,
+                    cstruct,
+                    lwt,
+                    lwt.ppx,
+                    mirage-btrees,
+                    core_kernel
+
+Executable fs_tests
+  Path:             tests
+  MainIs:           fsTests.ml
+  Build$:           flag(tests)
+  CompiledObject:   best
+  Install:          false
+  BuildDepends:     bisect_ppx,
+                    mirage-block-fs,
+                    mirage-block-unix,
+                    lwt,
+                    alcotest,
+                    tests
+
+Executable inode_index_tests
+  Path:             tests
+  MainIs:           inodeIndexTests.ml
+  Build$:           flag(tests)
+  CompiledObject:   best
+  Install:          false
+  BuildDepends:     bisect_ppx,
+                    mirage-block-fs,
+                    mirage-block-unix,
+                    lwt,
+                    alcotest,
+                    tests
+
+Executable inode_tests
+  Path:             tests
+  MainIs:           inodeTests.ml
+  Build$:           flag(tests)
+  CompiledObject:   best
+  Install:          false
+  BuildDepends:     bisect_ppx,
+                    mirage-block-fs,
+                    alcotest,
+                    tests
+
+Executable bitarray_tests
+  Path:             tests
+  MainIs:           bitarrayTests.ml
+  Build$:           flag(tests)
+  CompiledObject:   best
+  Install:          false
+  BuildDepends:     bisect_ppx,
+                    mirage-block-fs,
+                    core_kernel,
+                    alcotest,
+                    tests
+
+Executable free_map_tests
+  Path:             tests
+  MainIs:           free_map_tests.ml
+  Build$:           flag(tests)
+  CompiledObject:   best
+  Install:          false
+  BuildDepends:     bisect_ppx,
+                    mirage-block-fs,
+                    alcotest,
+                    tests
+
+Test fs_tests
+  Run$:             flag(tests)
+  TestTools:        fs_tests
+  Command:          $fs_tests
+  WorkingDirectory: tests
+
+Test inode_index_tests
+  Run$:             flag(tests)
+  TestTools:        inode_index_tests
+  Command:          $inode_index_tests
+  WorkingDirectory: tests
+
+Test inode_tests
+  Run$:             flag(tests)
+  TestTools:        inode_tests
+  Command:          $inode_tests
+  WorkingDirectory: tests
+
+Test bitarray_tests
+  Run$:             flag(tests)
+  TestTools:        bitarray_tests
+  Command:          $bitarray_tests
+  WorkingDirectory: tests
+
+Test free_map_tests
+  Run$:             flag(tests)
+  TestTools:        free_map_tests
+  Command:          $free_map_tests
+  WorkingDirectory: tests

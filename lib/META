@@ -1,0 +1,13 @@
+# OASIS_START
+# DO NOT EDIT (digest: 7b5af99eda943b033298764a8d3097a8)
+version = "0.0.1"
+description =
+"An inode-based file system built on top of MirageOS's BLOCK interface"
+requires = "bisect_ppx mirage cstruct lwt lwt.ppx mirage-btrees core_kernel"
+archive(byte) = "mirage_block_fs.cma"
+archive(byte, plugin) = "mirage_block_fs.cma"
+archive(native) = "mirage_block_fs.cmxa"
+archive(native, plugin) = "mirage_block_fs.cmxs"
+exists_if = "mirage_block_fs.cma"
+# OASIS_STOP
+
