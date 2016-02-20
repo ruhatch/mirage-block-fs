@@ -1,13 +1,14 @@
 open Alcotest
 open Testable
 open Fs
-open Lwt
 
 module F = Make(Block)
 
-let ( >>= ) x f = x >>= function
-  | `Error e -> return (`Error e)
+let ( >>= ) x f = Lwt.bind x @@ function
+  | `Error e -> Lwt.return (`Error e)
   | `Ok x -> f x
+
+let returnOk x = Lwt.return (`Ok x)
 
 let newFs () =
   Block.connect "disk.img" >>= fun bd ->
@@ -32,7 +33,7 @@ let fs_tests =
             (fun () ->
               newFs () >>= fun fs ->
               let file = newFile fs "All work and no play makes Dave a dull boy" in
-              return (`Ok (file)))
+              returnOk file)
             (fun () ->
               newFs () >>= fun fs ->
               let file = newFile fs "All work and no play makes Dave a dull boy" in

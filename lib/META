@@ -1,6 +1,6 @@
 # OASIS_START
-# DO NOT EDIT (digest: 7b5af99eda943b033298764a8d3097a8)
-version = "0.0.1"
+# DO NOT EDIT (digest: 7f55d247c6a11831b550b8c8f94667f6)
+version = "0.1.0"
 description =
 "An inode-based file system built on top of MirageOS's BLOCK interface"
 requires = "bisect_ppx mirage cstruct lwt lwt.ppx mirage-btrees core_kernel"

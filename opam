@@ -12,17 +12,21 @@ build: [
  [make "build"]
 ]
 install: [make "install"]
+build-test: [
+  ["./configure" "--enable-tests"]
+  [make "test"]
+]
 remove: [
   ["ocamlfind" "remove" "mirage-block-fs"]
 ]
 depends: [
   "ocamlfind" {build}
-  "bin_prot"
   "bisect_ppx" {>= "1.0.0"}
   "core_kernel" {>= "113.00.00"}
   "cstruct" {>= "1.8.0"}
   "lwt"
   "mirage" {>= "2.6.1"}
-  "ppx_bin_prot"
   "mirage-btrees" {>= "0.1.0"}
+  "alcotest" {test}
+  "mirage-block-unix" {test}
 ]

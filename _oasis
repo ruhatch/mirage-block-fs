@@ -37,8 +37,8 @@ Executable fs_tests
                     mirage-block-fs,
                     mirage-block-unix,
                     lwt,
-                    alcotest,
-                    tests
+                    lwt.unix,
+                    alcotest
 
 Executable inode_index_tests
   Path:             tests
@@ -50,9 +50,9 @@ Executable inode_index_tests
                     mirage-block-fs,
                     mirage-block-unix,
                     lwt,
-                    alcotest,
-                    tests
-
+                    lwt.unix,
+                    alcotest
+                    
 Executable inode_tests
   Path:             tests
   MainIs:           inodeTests.ml
@@ -61,8 +61,9 @@ Executable inode_tests
   Install:          false
   BuildDepends:     bisect_ppx,
                     mirage-block-fs,
-                    alcotest,
-                    tests
+                    lwt,
+                    lwt.unix,
+                    alcotest
 
 Executable bitarray_tests
   Path:             tests
@@ -72,9 +73,10 @@ Executable bitarray_tests
   Install:          false
   BuildDepends:     bisect_ppx,
                     mirage-block-fs,
+                    lwt,
+                    lwt.unix,
                     core_kernel,
-                    alcotest,
-                    tests
+                    alcotest
 
 Executable free_map_tests
   Path:             tests
@@ -84,8 +86,9 @@ Executable free_map_tests
   Install:          false
   BuildDepends:     bisect_ppx,
                     mirage-block-fs,
-                    alcotest,
-                    tests
+                    lwt,
+                    lwt.unix,
+                    alcotest
 
 Test fs_tests
   Run$:             flag(tests)
