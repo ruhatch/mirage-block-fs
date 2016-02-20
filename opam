@@ -1,6 +1,6 @@
 opam-version: "1.2"
 name: "mirage-block-fs"
-version: "0.0.1"
+version: "0.1.0"
 maintainer: "ruhatch <ruhatch@me.com>"
 authors: "ruhatch <ruhatch@me.com>"
 homepage: "https://github.com/ruhatch/mirage-block-fs"
@@ -24,4 +24,5 @@ depends: [
   "lwt"
   "mirage" {>= "2.6.1"}
   "ppx_bin_prot"
+  "mirage-btrees" {>= "0.1.0"}
 ]
