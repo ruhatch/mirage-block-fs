@@ -1,5 +1,5 @@
 Name: mirage-block-fs
-Version: 0.0.1
+Version: 0.1.0
 Synopsis: An inode-based file system built on top of MirageOS's BLOCK interface
 Authors: Rupert Horlick <ruhatch@me.com>
 License: LGPL with OCaml linking exception
