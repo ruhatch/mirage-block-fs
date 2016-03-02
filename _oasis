@@ -20,7 +20,7 @@ Library mirage_block_fs
                     FreeMap,
                     Bitarray
   BuildDepends:     bisect_ppx,
-                    mirage,
+                    mirage-types,
                     cstruct,
                     lwt,
                     lwt.ppx,
@@ -52,7 +52,7 @@ Executable inode_index_tests
                     lwt,
                     lwt.unix,
                     alcotest
-                    
+
 Executable inode_tests
   Path:             tests
   MainIs:           inodeTests.ml
