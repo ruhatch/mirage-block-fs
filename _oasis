@@ -20,7 +20,7 @@ Library mirage_block_fs
                     FreeMap,
                     Bitarray
   BuildDepends:     bisect_ppx,
-                    mirage-types,
+                    mirage-types.lwt,
                     cstruct,
                     lwt,
                     lwt.ppx,
