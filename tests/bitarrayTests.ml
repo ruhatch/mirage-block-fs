@@ -33,7 +33,7 @@ let bitarrayTests =
     "BitarraySet_Quickcheck_SetValueTrue", `Quick,
     (fun () ->
       let bitarray = Bitarray.create ~b:false 1000 in
-      Quickcheck.test (Quickcheck.Generator.int_between
+      Quickcheck.test (Int.gen_between
                          ~lower_bound:(Incl 0)
                          ~upper_bound:(Excl 1000))
                       (fun index ->
